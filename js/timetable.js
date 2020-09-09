@@ -20,6 +20,9 @@ function construstTimeTable(timeTable, talksData) {
                  {
                     return { time: time, name: "", title: name, major: ""};
                   } 
+                  else if (name == "藏田2") {
+                    return { time: time, name: "藏田 玲美", title: "「コラーゲン飲料は肌に良い」→考察してみた", major: "骨免疫学、薬物治療学"};
+                  }
                  else 
                   {
                     return { time: time, name: talk.name, title: talk.title, major: talk.affiliation };
