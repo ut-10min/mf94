@@ -14,10 +14,16 @@ function construstTimeTable(timeTable, talksData) {
                  //   index = parseInt(name.charAt(3)) - 1;
                  //   name = "宇佐美こすも";
                  // }
-
                  var talk = talksData.filter(function (t) { return t.name.indexOf(name) == 0; })[index];
-                 // console.log(talk);
-                 return { time: time, name: talk.name, title: talk.title, major: talk.affiliation };
+
+                 if ((time == "09:50") || (time == "12:50") || (time == "14:20")) 
+                 {
+                    return { time: time, name: "", title: name, major: ""};
+                  } 
+                 else 
+                  {
+                    return { time: time, name: talk.name, title: talk.title, major: talk.affiliation };
+                  }
                });
 }
 
@@ -29,8 +35,8 @@ $(function () {
 
   var template = $('#template').html();
   Mustache.parse(template);
-  var renderedFirst = Mustache.render(template, {table: firstDayTable, header: "5/18 (土)"});
-  var renderedSecond = Mustache.render(template, {table: secondDayTable, header: "5/19 (日)"});
+  var renderedFirst = Mustache.render(template, {table: firstDayTable, header: "9/20 (日)"});
+  var renderedSecond = Mustache.render(template, {table: secondDayTable, header: "9/21 (月)"});
   // var renderedThird = Mustache.render(template, {table: thirdDayTable, header: "11/25(日)"});
   // $('.article-headline').html(renderedFirst + "<br />" + renderedSecond + "<br />" + renderedThird);
   $('.article-headline').html(renderedFirst + "<br />" + renderedSecond);
