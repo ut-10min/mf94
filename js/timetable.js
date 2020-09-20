@@ -20,11 +20,14 @@ function construstTimeTable(timeTable, talksData) {
                  {
                     return { time: name, name: "", title: "", major: ""};
                   } 
-                  else if ((time == "12:20") || (time == "14:00") || (time == "15:30")) {
+                  else if ((time == "12:20") || (time == "14:00") || (time == "15:30")|| (time == "17:30")) {
                     return { time: "\xa0", name: "  ", title: "", major: ""};
                   }
                   else if (name == "藏田2") {
                     return { time: time, name: "藏田 玲美", title: "「薬」ができるまで～創薬開発から承認まで～", major: "骨免疫学、薬物治療学"};
+                  }
+                  else if (time == "16:20"){
+                    return { time: time, name: "", title: name, major: ""}
                   }
                  else 
                   {
