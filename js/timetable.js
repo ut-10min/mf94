@@ -16,7 +16,11 @@ function construstTimeTable(timeTable, talksData) {
                  // }
                  var talk = talksData.filter(function (t) { return t.name.indexOf(name) == 0; })[index];
 
-                  if ((time == "11:40") || (time == "15:40")) {
+                  if ((time == "11:40") 
+                    || (time == "15:40")
+                    || (time == "13:29")
+                    || (time == "13:59")
+                  ) {
                     return { time: "\xa0", name: "\xa0", title: "", major: ""};
                   }
                   else if (name == "前のセッションのメンバーで座談会") {
