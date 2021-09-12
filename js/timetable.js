@@ -15,28 +15,27 @@ function construstTimeTable(timeTable, talksData) {
                  //   name = "宇佐美こすも";
                  // }
                  var talk = talksData.filter(function (t) { return t.name.indexOf(name) == 0; })[index];
-
                  if (
                    (time == "09:50") || 
                    (time == "12:30") || 
                    (time == "14:50")
                  ) 
                  {
-                    return { time: name, name: "", title: "", major: ""};
-                  } 
-                  if (
-                    (time == "11:40") || 
-                    (time == "13:59") || 
-                    (time == "14:40")
-                  ) {
-                    return { time: "\xa0", name: "\xa0", title: "", major: ""};
-                  }
-                  else if (time == "14:00") {
-                    return { time: time, name: "", title: name, major: ""};
-                  }
-                  else {
-                    return { time: time, name: talk.name, title: talk.title, major: talk.affiliation };
-                  }
+                   return { time: name, name: "", title: "", major: ""};
+                 } 
+                 else if (time == "14:00") {
+                   return { time: time, name: "", title: name, major: ""};
+                 }
+                 if (
+                   (time == "11:40") || 
+                   (time == "13:59") || 
+                   (time == "14:40")
+                 ) {
+                   return { time: "\xa0", name: "\xa0", title: "", major: ""};
+                 }
+                 else {
+                   return { time: time, name: talk.name, title: talk.title, major: talk.affiliation };
+                 }
                });
 }
 
