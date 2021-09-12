@@ -22,7 +22,7 @@ function construstTimeTable(timeTable, talksData) {
                   ) {
                     return { time: "\xa0", name: "\xa0", title: "", major: ""};
                   }
-                  else if (name == "前のセッションメンバーで座談会") {
+                  else if (time == "14:00") {
                     return { time: time, name: "", title: name, major: ""};
                   }
                   else {
