@@ -18,7 +18,9 @@ function construstTimeTable(timeTable, talksData) {
                  if (
                    (time == "09:50") || 
                    (time == "12:30") || 
-                   (time == "14:50")
+                   (time == "14:50") ||
+                   (time == "16:09") ||
+                   (time == "16:29")    
                  ) 
                  {
                    return { time: name, name: "", title: "", major: ""};
@@ -29,9 +31,14 @@ function construstTimeTable(timeTable, talksData) {
                  if (
                    (time == "11:40") || 
                    (time == "13:59") || 
-                   (time == "14:40")
+                   (time == "14:40") ||
+                   (time == "16:00") || 
+                   (time == "16:20") 
                  ) {
                    return { time: "\xa0", name: "\xa0", title: "", major: ""};
+                 }
+                 else if (name == "第1部講演の録画を放映予定") {
+                   return { time: time, name: "", title: name, major: ""};
                  }
                  else {
                    return { time: time, name: talk.name, title: talk.title, major: talk.affiliation };
