@@ -32,7 +32,6 @@ function construstTimeTable(timeTable, talksData) {
                    (time == "11:40") || 
                    (time == "13:59") || 
                    (time == "14:40") ||
-                   (time == "16:00") || 
                    (time == "16:20") 
                  ) {
                    return { time: "\xa0", name: "\xa0", title: "", major: ""};
